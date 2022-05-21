@@ -5,6 +5,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 //MY OWN IMPORT
 import 'package:techie/components/horizontal_listview.dart';
+import 'package:techie/components/products.dart';
 
 void main() {
   runApp(
@@ -153,7 +154,10 @@ class _HomePageState extends State<HomePage> {
           //PADDING WIDGET
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('Categories'),
+            child: Text(
+              'Categories',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            ),
           ),
 
           // HORIZONTAL LIST VIEW BEGINS HERE
@@ -161,12 +165,16 @@ class _HomePageState extends State<HomePage> {
 
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text('Recent product'),
+            child: Text(
+              'Recent product',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            ),
           ),
 
           //GRID VIEW
           Container(
-            height: 250.0,
+            height: 320.0,
+            child: Products(),
           )
         ],
       ),
