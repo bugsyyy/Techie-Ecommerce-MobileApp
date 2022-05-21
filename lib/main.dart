@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           AssetImage('images/game.png'),
           AssetImage('images/rtxrestock.png'),
         ],
-        autoplay: false,
+        autoplay: true,
         animationCurve: Curves.fastOutSlowIn,
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 3.0,
@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
 
           //GRID VIEW
           Container(
-            height: 350.0,
+            height: 250.0,
           )
         ],
       ),
