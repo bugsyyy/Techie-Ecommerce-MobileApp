@@ -13,39 +13,33 @@ class _ProductsState extends State<Products> {
   var product_list = [
     {
       "name": "RTX 3060 GPU",
-      "picture": "images/products/3060gpu.jpg",
+      "picture": "images/products/3060.png",
       "old_price": 23500,
       "price": 23000,
     },
     {
-      "name": "ASUS MOBO",
-      "picture": "images/products/asus mobo.png",
+      "name": "AORUS MOBO",
+      "picture": "images/products/aorusmobo.jpg",
       "old_price": 6000,
       "price": 5500,
     },
     {
-      "name": "ASUS MOBO",
-      "picture": "images/products/asus mobo.png",
-      "old_price": 6000,
-      "price": 5500,
+      "name": "i9 PROCESSOR",
+      "picture": "images/products/inteli9 processor.jpg",
+      "old_price": 32000,
+      "price": 30000,
     },
     {
-      "name": "ASUS MOBO",
-      "picture": "images/products/asus mobo.png",
-      "old_price": 6000,
-      "price": 5500,
+      "name": "WD - 2TB SSD",
+      "picture": "images/products/ssd.jpg",
+      "old_price": 21800,
+      "price": 21000,
     },
     {
-      "name": "ASUS MOBO",
-      "picture": "images/products/asus mobo.png",
-      "old_price": 6000,
-      "price": 5500,
-    },
-    {
-      "name": "ASUS MOBO",
-      "picture": "images/products/asus mobo.png",
-      "old_price": 6000,
-      "price": 5500,
+      "name": "GSKILL RAM",
+      "picture": "images/products/gskill ram.jpg",
+      "old_price": 5700,
+      "price": 5300,
     },
   ];
   @override
@@ -103,32 +97,25 @@ class Single_prod extends StatelessWidget {
                     product_detail_newprice: prod_price))),
             child: GridTile(
                 footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      product_name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13.0,
-                      ),
-                    ),
-                    title: Text(
-                      "\P$prod_price",
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13.0),
-                    ),
-                    subtitle: Text(
-                      "\P$prod_old_price",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 12.0,
-                          decoration: TextDecoration.lineThrough),
-                    ),
-                  ),
-                ),
+                    height: 30,
+                    color: Colors.white60,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            product_name,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15.0),
+                          ),
+                        ),
+                        Text(
+                          "\P${prod_price}",
+                          style: TextStyle(
+                              color: Colors.green.shade800,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
                 child: Image.asset(
                   prod_pitcure,
                   fit: BoxFit.cover,

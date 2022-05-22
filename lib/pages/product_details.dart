@@ -156,7 +156,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           Divider(),
 
           ListTile(
-            title: Text("Product details"),
+            title: Text("Product details:"),
             subtitle: Text(
                 "The GeForce RTX 3060 is a performance-segment graphics card by NVIDIA, launched on January 12th, 2021. Built on the 8 nm process, and based on the GA106 graphics processor, in its GA106-300-A1 variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 3060. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games."),
           ),
@@ -166,7 +166,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
                 child: Text(
-                  "Product name",
+                  "Product name:",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
@@ -182,7 +182,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
                 child: Text(
-                  "Product brand",
+                  "Product brand:",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
@@ -191,7 +191,25 @@ class _ProductDetailsState extends State<ProductDetails> {
               Padding(
                 padding: EdgeInsets.all(5.0),
                 child: Text("Brand X"),
-              )
+              ),
+            ],
+          ),
+
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product condition:",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+
+              // REMEMBER TO CREATE THE PRODUCT BRAND
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text("Brand new"),
+              ),
             ],
           ),
         ],

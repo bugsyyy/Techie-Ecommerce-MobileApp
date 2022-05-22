@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 3.0,
         indicatorBgPadding: 6.0,
+        dotBgColor: Colors.transparent,
       ),
     );
     return Scaffold(

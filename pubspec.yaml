@@ -75,8 +75,11 @@ flutter:
     - images/categories/gpu.png
     - images/categories/ram3.png
     - images/categories/storage.png
-    - images/products/asus mobo.png
-    - images/products/3060gpu.jpg
+    - images/products/3060.png
+    - images/products/gskill ram.jpg
+    - images/products/inteli9 processor.jpg
+    - images/products/ssd.jpg
+    - images/products/aorusmobo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
