@@ -21,6 +21,30 @@ class _ProductsState extends State<Products> {
       "old_price": 6000,
       "price": 5500,
     },
+    {
+      "name": "ASUS MOBO",
+      "picture": "images/products/asus mobo.png",
+      "old_price": 6000,
+      "price": 5500,
+    },
+    {
+      "name": "ASUS MOBO",
+      "picture": "images/products/asus mobo.png",
+      "old_price": 6000,
+      "price": 5500,
+    },
+    {
+      "name": "ASUS MOBO",
+      "picture": "images/products/asus mobo.png",
+      "old_price": 6000,
+      "price": 5500,
+    },
+    {
+      "name": "ASUS MOBO",
+      "picture": "images/products/asus mobo.png",
+      "old_price": 6000,
+      "price": 5500,
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -77,7 +101,7 @@ class Single_prod extends StatelessWidget {
                       product_name,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 14.0,
+                        fontSize: 13.0,
                       ),
                     ),
                     title: Text(
@@ -85,14 +109,14 @@ class Single_prod extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.w800,
-                          fontSize: 14.0),
+                          fontSize: 13.0),
                     ),
                     subtitle: Text(
                       "\P$prod_old_price",
                       style: TextStyle(
-                          color: Colors.red,
+                          color: Colors.grey,
                           fontWeight: FontWeight.w800,
-                          fontSize: 14.0,
+                          fontSize: 12.0,
                           decoration: TextDecoration.lineThrough),
                     ),
                   ),

@@ -1,3 +1,9 @@
+//PROJECT IN ELECTIVE 1
+//DEVELOPERS:
+//DELA CRUZ, RYAN KHYLE N.
+//BUGAYONG, LUIGI MIGUEL
+//VILLANUEVA, RICK FRANCIS
+
 // ignore_for_file:prefer_const_constructors
 
 import 'package:flutter/material.dart';
@@ -47,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.1,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black87,
         title: Text('Techie'),
         actions: <Widget>[
           new IconButton(
@@ -80,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              decoration: BoxDecoration(color: Colors.red),
+              decoration: BoxDecoration(color: Colors.black87),
             ),
             //*BODY-----------------------
             InkWell(
