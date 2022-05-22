@@ -1,4 +1,4 @@
-# techie
+# "Techie" - E-commerce Mobile App
 
 A new Flutter project.
 
