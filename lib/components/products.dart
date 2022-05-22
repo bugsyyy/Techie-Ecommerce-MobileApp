@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:techie/pages/product_details.dart';
+
 class Products extends StatefulWidget {
   const Products({Key? key}) : super(key: key);
 
@@ -92,7 +94,13 @@ class Single_prod extends StatelessWidget {
         tag: product_name,
         child: Material(
           child: InkWell(
-            onTap: () {},
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                //here we are passing the values of the product to the product details page
+                builder: (context) => ProductDetails(
+                    product_detail_name: product_name,
+                    product_detail_picture: prod_pitcure,
+                    product_detail_oldprice: prod_old_price,
+                    product_detail_newprice: prod_price))),
             child: GridTile(
                 footer: Container(
                   color: Colors.white70,
@@ -108,7 +116,7 @@ class Single_prod extends StatelessWidget {
                       "\P$prod_price",
                       style: TextStyle(
                           color: Colors.green,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.bold,
                           fontSize: 13.0),
                     ),
                     subtitle: Text(
