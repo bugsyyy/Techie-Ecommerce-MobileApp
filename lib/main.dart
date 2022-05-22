@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('Home page'),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home, color: Colors.blue.shade700),
               ),
             ),
 
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('My account'),
-                leading: Icon(Icons.person),
+                leading: Icon(Icons.person, color: Colors.orange.shade700),
               ),
             ),
 
@@ -110,15 +110,16 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('My order'),
-                leading: Icon(Icons.shopping_basket),
+                leading:
+                    Icon(Icons.shopping_basket, color: Colors.green.shade700),
               ),
             ),
 
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Shopping cart'),
+                leading: Icon(Icons.shopping_cart, color: Colors.black87),
               ),
             ),
 
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('Favorites'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(Icons.favorite, color: Colors.red.shade600),
               ),
             ),
 
@@ -138,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Settings'),
                 leading: Icon(
                   Icons.settings,
-                  color: Colors.blue,
+                  color: Colors.blueGrey,
                 ),
               ),
             ),
@@ -147,7 +148,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('About'),
-                leading: Icon(Icons.help, color: Colors.green),
+                leading: Icon(Icons.help, color: Colors.blueGrey),
               ),
             ),
           ],

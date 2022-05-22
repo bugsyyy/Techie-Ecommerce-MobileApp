@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techie/main.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails(
@@ -33,18 +34,17 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.black87,
-        title: Text('Techie'),
+        title: InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            child: Text('Techie')),
         actions: <Widget>[
           new IconButton(
               onPressed: () {},
               icon: Icon(
                 Icons.search,
-                color: Colors.white,
-              )),
-          new IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.shopping_cart,
                 color: Colors.white,
               )),
         ],
@@ -156,9 +156,14 @@ class _ProductDetailsState extends State<ProductDetails> {
           Divider(),
 
           ListTile(
-            title: Text("Product details:"),
+            title: Text(
+              "Product details",
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
             subtitle: Text(
-                "The GeForce RTX 3060 is a performance-segment graphics card by NVIDIA, launched on January 12th, 2021. Built on the 8 nm process, and based on the GA106 graphics processor, in its GA106-300-A1 variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 3060. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games."),
+              "The GeForce RTX 3060 is a performance-segment graphics card by NVIDIA, launched on January 12th, 2021. Built on the 8 nm process, and based on the GA106 graphics processor, in its GA106-300-A1 variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 3060. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games.",
+              style: TextStyle(fontWeight: FontWeight.w400),
+            ),
           ),
           Divider(),
           Row(
@@ -212,7 +217,141 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ],
           ),
+
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(7.0),
+          ),
+          Text(
+            "Similar products",
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
+
+          // SIMILAR PRODUCTS SECTION
+          Container(
+            height: 360,
+            child: Similarproducts(),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class Similarproducts extends StatefulWidget {
+  const Similarproducts({Key? key}) : super(key: key);
+
+  @override
+  State<Similarproducts> createState() => _SimilarproductsState();
+}
+
+class _SimilarproductsState extends State<Similarproducts> {
+  var product_list = [
+    {
+      "name": "AORUS MOBO",
+      "picture": "images/products/aorusmobo.jpg",
+      "old_price": 6000,
+      "price": 5500,
+    },
+    {
+      "name": "i9 PROCESSOR",
+      "picture": "images/products/inteli9 processor.jpg",
+      "old_price": 32000,
+      "price": 30000,
+    },
+    {
+      "name": "WD - 2TB SSD",
+      "picture": "images/products/ssd.jpg",
+      "old_price": 21800,
+      "price": 21000,
+    },
+    {
+      "name": "GSKILL RAM",
+      "picture": "images/products/gskill ram.jpg",
+      "old_price": 5700,
+      "price": 5300,
+    },
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        itemCount: product_list.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (BuildContext context, int index) {
+          return Similar_single_prod(
+            product_name: product_list[index]['name'],
+            prod_pitcure: product_list[index]['picture'],
+            prod_old_price: product_list[index]['old_price'],
+            prod_price: product_list[index]['price'],
+          );
+        });
+  }
+}
+
+class Similar_single_prod extends StatelessWidget {
+  const Similar_single_prod(
+      {Key? key,
+      required this.product_name,
+      required this.prod_pitcure,
+      required this.prod_old_price,
+      required this.prod_price})
+      : super(key: key);
+
+  final product_name;
+  final prod_pitcure;
+  final prod_old_price;
+  final prod_price;
+
+  Single_product({
+    Key? key,
+    required dynamic product_name,
+    required dynamic prod_pitcure,
+    required dynamic prod_old_price,
+    required dynamic prod_price,
+  }) {}
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Hero(
+        tag: product_name,
+        child: Material(
+          child: InkWell(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                //here we are passing the values of the product to the product details page
+                builder: (context) => ProductDetails(
+                    product_detail_name: product_name,
+                    product_detail_picture: prod_pitcure,
+                    product_detail_oldprice: prod_old_price,
+                    product_detail_newprice: prod_price))),
+            child: GridTile(
+                footer: Container(
+                    height: 30,
+                    color: Colors.white60,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            product_name,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15.0),
+                          ),
+                        ),
+                        Text(
+                          "\P${prod_price}",
+                          style: TextStyle(
+                              color: Colors.green.shade800,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+                child: Image.asset(
+                  prod_pitcure,
+                  fit: BoxFit.cover,
+                )),
+          ),
+        ),
       ),
     );
   }
