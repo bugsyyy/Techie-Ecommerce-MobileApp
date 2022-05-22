@@ -94,7 +94,26 @@ class _ProductDetailsState extends State<ProductDetails> {
               // ========= THE QTY BUTTON ========
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                              title: Text("Quantity"),
+                              content: Text("Choose the quantity"),
+                              actions: <Widget>[
+                                MaterialButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(context);
+                                  },
+                                  child: Text(
+                                    "close",
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                ),
+                              ]);
+                        });
+                  },
                   color: Colors.white,
                   textColor: Colors.grey,
                   elevation: 0.2,
@@ -131,6 +150,48 @@ class _ProductDetailsState extends State<ProductDetails> {
                     Icons.favorite_border,
                     color: Colors.red,
                   )),
+            ],
+          ),
+
+          Divider(),
+
+          ListTile(
+            title: Text("Product details"),
+            subtitle: Text(
+                "The GeForce RTX 3060 is a performance-segment graphics card by NVIDIA, launched on January 12th, 2021. Built on the 8 nm process, and based on the GA106 graphics processor, in its GA106-300-A1 variant, the card supports DirectX 12 Ultimate. This ensures that all modern games will run on GeForce RTX 3060. Additionally, the DirectX 12 Ultimate capability guarantees support for hardware-raytracing, variable-rate shading and more, in upcoming video games."),
+          ),
+          Divider(),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product name",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text(widget.product_detail_name),
+              )
+            ],
+          ),
+
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product brand",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+
+              // REMEMBER TO CREATE THE PRODUCT BRAND
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text("Brand X"),
+              )
             ],
           ),
         ],
