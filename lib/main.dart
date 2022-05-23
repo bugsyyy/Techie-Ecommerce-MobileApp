@@ -12,6 +12,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 //MY OWN IMPORT
 import 'package:techie/components/horizontal_listview.dart';
 import 'package:techie/components/products.dart';
+import 'package:techie/pages/cart.dart';
 
 void main() {
   runApp(
@@ -64,7 +65,10 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               )),
           new IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               icon: Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
@@ -116,7 +120,10 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               child: ListTile(
                 title: Text('Shopping cart'),
                 leading: Icon(Icons.shopping_cart, color: Colors.black87),

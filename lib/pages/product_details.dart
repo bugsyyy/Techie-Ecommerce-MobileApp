@@ -143,7 +143,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
               IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.shopping_cart, color: Colors.blue)),
+                  icon: Icon(Icons.shopping_cart, color: Colors.black87)),
               IconButton(
                   onPressed: () {},
                   icon: Icon(
